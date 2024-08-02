@@ -1,5 +1,6 @@
 ﻿using Core.Entity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace Infrastructure.Repository
 {
@@ -21,6 +22,10 @@ namespace Infrastructure.Repository
                 optionsBuilder.UseSqlServer(_connectionString);
                 //optionsBuilder.UseLazyLoadingProxies();
             }
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
         }
     }
 }
