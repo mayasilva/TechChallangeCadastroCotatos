@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TechChallangeCadastroCotatos")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+458a62a250d21a1ad7c5470c2acd295535bdd92c")]
 [assembly: System.Reflection.AssemblyProductAttribute("TechChallangeCadastroCotatos")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TechChallangeCadastroCotatos")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

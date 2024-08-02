@@ -434,9 +434,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\arthu\\source\\repos\\TechChallangeCadastroCotatos\\TechChallangeCadastroCotatos\\TechChallangeCadastroCotatos.csproj",
-      "projectName": "TechChallangeCadastroCotatos",
-      "projectPath": "C:\\Users\\arthu\\source\\repos\\TechChallangeCadastroCotatos\\TechChallangeCadastroCotatos\\TechChallangeCadastroCotatos.csproj",
+      "projectUniqueName": "C:\\Users\\arthu\\source\\repos\\TechChallangeCadastroCotatos\\TechChallangeCadastroCotatos\\TechChallangeCadastroCotatosAPI.csproj",
+      "projectName": "TechChallangeCadastroCotatosAPI",
+      "projectPath": "C:\\Users\\arthu\\source\\repos\\TechChallangeCadastroCotatos\\TechChallangeCadastroCotatos\\TechChallangeCadastroCotatosAPI.csproj",
       "packagesPath": "C:\\Users\\arthu\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\arthu\\source\\repos\\TechChallangeCadastroCotatos\\TechChallangeCadastroCotatos\\obj\\",
       "projectStyle": "PackageReference",
