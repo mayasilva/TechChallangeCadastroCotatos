@@ -8,6 +8,15 @@ namespace Infrastructure.Repository
     {
         private readonly string _connectionString;
 
+        public ApplicationDbContext()
+        {
+            IConfiguration configuration = new ConfigurationBuilder()
+                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                .AddJsonFile("appsettings.json")
+                .Build();
+            _connectionString = configuration.GetConnectionString("connectionString");
+        }
+
         public ApplicationDbContext(string connectionString)
         {
             _connectionString = connectionString;
