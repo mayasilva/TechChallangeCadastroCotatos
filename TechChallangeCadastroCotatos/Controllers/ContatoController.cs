@@ -1,6 +1,7 @@
 ﻿using Core.Entity;
 using Core.Input;
 using Core.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace TechChallangeCadastroContatosAPI.Controllers
@@ -16,6 +17,7 @@ namespace TechChallangeCadastroContatosAPI.Controllers
             _contatoRepository = contatoRepository;
         }
 
+        [Authorize]
         [HttpGet]
         public IActionResult Get()
         {
@@ -31,6 +33,7 @@ namespace TechChallangeCadastroContatosAPI.Controllers
 
         }
 
+        [Authorize]
         [HttpGet("PorId/{id:int}")]
         public IActionResult Get([FromRoute] int id)
         {
@@ -46,6 +49,7 @@ namespace TechChallangeCadastroContatosAPI.Controllers
 
         }
 
+        [Authorize]
         [HttpGet("GetPorDDD/{ddd:int}")]
         public IActionResult GetPorDDD([FromRoute] int ddd)
         {
@@ -61,7 +65,7 @@ namespace TechChallangeCadastroContatosAPI.Controllers
 
         }
 
-
+        [Authorize]
         [HttpPost]
         public IActionResult Post([FromBody] ContatoInput input)
         {
@@ -91,6 +95,7 @@ namespace TechChallangeCadastroContatosAPI.Controllers
 
         }
 
+        [Authorize]
         [HttpPut]
         public IActionResult Put([FromBody] ContatoUpdateInput input)
         {
@@ -118,6 +123,7 @@ namespace TechChallangeCadastroContatosAPI.Controllers
 
         }
 
+        [Authorize]
         [HttpDelete("{id:int}")]
         public IActionResult Delete([FromRoute] int id)
         {
