@@ -120,7 +120,6 @@ namespace TechChallangeCadastroContatosAPI.Controllers
             {
                 return BadRequest(e);
             }
-
         }
 
         [Authorize]

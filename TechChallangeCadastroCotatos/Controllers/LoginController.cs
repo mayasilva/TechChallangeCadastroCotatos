@@ -16,24 +16,31 @@ namespace TechChallangeCadastroContatosAPI.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] LoginInput loginInput)
         {
-            if (loginInput.Usuario == "usuario-fiap" && loginInput.Senha == "senha-fiap")
+            if (ModelState.IsValid)
             {
-                var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Utils.CHAVE_TOKEN));
-                var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+                if (loginInput.Usuario == "usuario-fiap" && loginInput.Senha == "senha-fiap")
+                {
+                    var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Utils.CHAVE_TOKEN));
+                    var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
-                var Sectoken = new JwtSecurityToken(null,
-                  null,
-                  null,
-                  expires: DateTime.Now.AddMinutes(120),
-                  signingCredentials: credentials);
+                    var Sectoken = new JwtSecurityToken(null,
+                      null,
+                      null,
+                      expires: DateTime.Now.AddMinutes(120),
+                      signingCredentials: credentials);
 
-                var token = new JwtSecurityTokenHandler().WriteToken(Sectoken);
+                    var token = new JwtSecurityTokenHandler().WriteToken(Sectoken);
 
-                return Ok(token);                
+                    return Ok(token);
+                }
+                else
+                {
+                    return Unauthorized("Usuário ou senha incorretos");
+                }
             }
             else
             {
-                return Unauthorized("Usuário ou senha incorretos");
+                return BadRequest(ModelState);
             }
         }
     }
