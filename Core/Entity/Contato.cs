@@ -1,9 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.Reflection.Metadata.Ecma335;
-
-namespace Core.Entity
+﻿namespace Core.Entity
 {
-    [Table("Contato")]
     public class Contato
     {
         public int Id { get; set; }
@@ -11,6 +7,5 @@ namespace Core.Entity
         public required int DDD { get; set; }
         public int Telefone { get; set; }
         public string Email { get; set; }
-
     }
 }

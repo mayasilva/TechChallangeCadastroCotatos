@@ -3566,25 +3566,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\arthu\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\lipeg\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\arthu\\source\\repos\\TechChallangeCadastroCotatos\\TechChallangeCadastroCotatos\\TechChallangeCadastroCotatosAPI.csproj",
-      "projectName": "TechChallangeCadastroCotatosAPI",
-      "projectPath": "C:\\Users\\arthu\\source\\repos\\TechChallangeCadastroCotatos\\TechChallangeCadastroCotatos\\TechChallangeCadastroCotatosAPI.csproj",
-      "packagesPath": "C:\\Users\\arthu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\arthu\\source\\repos\\TechChallangeCadastroCotatos\\TechChallangeCadastroCotatos\\obj\\",
+      "projectUniqueName": "C:\\FIAP\\TechChallangeCadastroCotatos\\TechChallangeCadastroCotatos\\TechChallangeCadastroContatosAPI.csproj",
+      "projectName": "TechChallangeCadastroContatosAPI",
+      "projectPath": "C:\\FIAP\\TechChallangeCadastroCotatos\\TechChallangeCadastroCotatos\\TechChallangeCadastroContatosAPI.csproj",
+      "packagesPath": "C:\\Users\\lipeg\\.nuget\\packages\\",
+      "outputPath": "C:\\FIAP\\TechChallangeCadastroCotatos\\TechChallangeCadastroCotatos\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\arthu\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\lipeg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -3598,8 +3598,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\arthu\\source\\repos\\TechChallangeCadastroCotatos\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\arthu\\source\\repos\\TechChallangeCadastroCotatos\\Infrastructure\\Infrastructure.csproj"
+            "C:\\FIAP\\TechChallangeCadastroCotatos\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\FIAP\\TechChallangeCadastroCotatos\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }

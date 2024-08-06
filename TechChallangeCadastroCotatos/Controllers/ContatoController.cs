@@ -2,14 +2,12 @@
 using Core.Input;
 using Core.Repository;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Diagnostics;
-using System.ComponentModel.DataAnnotations;
 
-namespace TechChallangeCadastroCotatosAPI.Controllers
+namespace TechChallangeCadastroContatosAPI.Controllers
 {
     [ApiController]
     [Route("/[controller]")]
-    public class ContatoController: ControllerBase
+    public class ContatoController : ControllerBase
     {
         private readonly IContatoRepository _contatoRepository;
 
@@ -19,7 +17,7 @@ namespace TechChallangeCadastroCotatosAPI.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get() 
+        public IActionResult Get()
         {
 
             try
@@ -33,23 +31,23 @@ namespace TechChallangeCadastroCotatosAPI.Controllers
 
         }
 
-        //[HttpGet("PorId {id:int}")]
-        //public IActionResult Get([FromRoute] int id)
-        //{
+        [HttpGet("PorId/{id:int}")]
+        public IActionResult Get([FromRoute] int id)
+        {
 
-        //    try
-        //    {
-        //        return Ok(_contatoRepository.ObterPorId(id));
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        return BadRequest(e);
-        //    }
+            try
+            {
+                return Ok(_contatoRepository.ObterPorId(id));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
 
-        //}
+        }
 
-        [HttpGet("{ddd:int}")]
-        public IActionResult Get([FromRoute] int ddd)
+        [HttpGet("GetPorDDD/{ddd:int}")]
+        public IActionResult GetPorDDD([FromRoute] int ddd)
         {
 
             try
@@ -65,21 +63,28 @@ namespace TechChallangeCadastroCotatosAPI.Controllers
 
 
         [HttpPost]
-        public IActionResult Post([FromBody] ContatoInput input) 
+        public IActionResult Post([FromBody] ContatoInput input)
         {
             try
             {
-                var contato = new Contato() 
-                { 
-                    Nome = input.Nome,
-                    DDD = input.DDD,
-                    Telefone = input.Telefone,
-                    Email = input.Email,
-                };
-                _contatoRepository.Cadastrar(contato);
-                return Ok();
+                if (ModelState.IsValid)
+                {
+                    var contato = new Contato()
+                    {
+                        Nome = input.Nome,
+                        DDD = input.DDD,
+                        Telefone = Convert.ToInt32(input.Telefone),
+                        Email = input.Email,
+                    };
+                    _contatoRepository.Cadastrar(contato);
+                    return Ok(contato);
+                }
+                else
+                {
+                    return BadRequest(ModelState);
+                }
             }
-            catch (Exception e) 
+            catch (Exception e)
             {
                 return BadRequest(e);
             }
@@ -91,13 +96,20 @@ namespace TechChallangeCadastroCotatosAPI.Controllers
         {
             try
             {
-                var contato = _contatoRepository.ObterPorId(input.Id);
-                contato.Nome = input.Nome;
-                contato.DDD = input.DDD;
-                contato.Telefone = input.Telefone;
-                contato.Email = input.Email;
-                _contatoRepository.Alterar(contato);
-                return Ok();
+                if (ModelState.IsValid)
+                {
+                    var contato = _contatoRepository.ObterPorId(input.Id);
+                    contato.Nome = input.Nome;
+                    contato.DDD = input.DDD;
+                    contato.Telefone = Convert.ToInt32(input.Telefone);
+                    contato.Email = input.Email;
+                    _contatoRepository.Alterar(contato);
+                    return Ok(input);
+                }
+                else
+                {
+                    return BadRequest(ModelState);
+                }
             }
             catch (Exception e)
             {
