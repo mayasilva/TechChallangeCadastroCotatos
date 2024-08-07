@@ -10,7 +10,7 @@ namespace Core.Repository
     public interface IRepository<T> where T : Contato
     {
         IList<T> ObterTodos();
-        T ObterPorDDD(int DDD);
+        IList<T> ObterPorDDD(int DDD);
         T ObterPorId(int Id);
         void Cadastrar(T entidade);
         void Alterar(T entidade);

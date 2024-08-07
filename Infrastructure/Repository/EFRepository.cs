@@ -33,9 +33,8 @@ namespace Infrastructure.Repository
             _context.SaveChanges();
         }
 
-        public T ObterPorDDD(int DDD)
-            => _dbSet.FirstOrDefault(entity => entity.DDD == DDD);
-       
+        public IList<T> ObterPorDDD(int DDD) => _dbSet
+                .Where(entity => entity.DDD == DDD).ToList();
 
         public T ObterPorId(int id)
             => _dbSet.FirstOrDefault(entity => entity.Id == id);
