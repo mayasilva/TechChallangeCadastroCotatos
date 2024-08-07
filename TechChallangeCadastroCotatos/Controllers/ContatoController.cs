@@ -23,6 +23,7 @@ namespace TechChallangeCadastroContatosAPI.Controllers
         /// <returns>Retorna uma lista de contato</returns>
         /// <response code="200">Sucesso na execução ao retornar os contatos</response>
         /// <response code="500">Não foi possivel retornar as informações dos contatos</response>
+        /// <response code="401">Token inválido</response>
         [Authorize]
         [HttpGet]
         public IActionResult Get()
@@ -46,6 +47,7 @@ namespace TechChallangeCadastroContatosAPI.Controllers
         /// <returns>Retorna um Contato filtrado pelo Id</returns>
         /// <response code="200">Sucesso na execução ao retornar do contato</response>
         /// <response code="500">Não foi possivel retornar as informações do contato</response>
+        /// <response code="401">Token inválido</response>
         [Authorize]
         [HttpGet("PorId/{id:int}")]
         public IActionResult Get([FromRoute] int id)
@@ -69,6 +71,7 @@ namespace TechChallangeCadastroContatosAPI.Controllers
         /// <returns></returns>
         /// <response code="200">Sucesso na execução ao retornar do contato</response>
         /// <response code="500">Não foi possivel retornar as informações do contato</response>
+        /// <response code="401">Token inválido</response>
         [Authorize]
         [HttpGet("GetPorDDD/{ddd:int}")]
         public IActionResult GetPorDDD([FromRoute] int ddd)
@@ -104,6 +107,7 @@ namespace TechChallangeCadastroContatosAPI.Controllers
         /// <returns>Retorna Contato cadastrado</returns>
         /// <response code="200">Sucesso na execução da inclusão de um novo contato</response>
         /// <response code="500">Não foi possivel incluir um novo contato</response>
+        /// <response code="401">Token inválido</response>
         [Authorize]
         [HttpPost]
         public IActionResult Post([FromBody] ContatoInput input)
@@ -153,6 +157,7 @@ namespace TechChallangeCadastroContatosAPI.Controllers
         /// <returns>Contato alterado</returns>
         /// <response code="200">Sucesso na execução da alteração do contato</response>
         /// <response code="500">Não foi possivel alterar o contato</response>
+        /// <response code="401">Token inválido</response>
         [Authorize]
         [HttpPut]
         public IActionResult Put([FromBody] ContatoUpdateInput input)
@@ -187,6 +192,7 @@ namespace TechChallangeCadastroContatosAPI.Controllers
         /// <returns></returns>
         /// <response code="200">Sucesso na exclusão do contato</response>
         /// <response code="500">Não foi possivel excluir o contato</response>
+        /// <response code="401">Token inválido</response>
         [Authorize]
         [HttpDelete("{id:int}")]
         public IActionResult Delete([FromRoute] int id)

@@ -1,7 +1,5 @@
 ﻿using Core.Input;
 using Core.Utils;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -13,6 +11,11 @@ namespace TechChallangeCadastroContatosAPI.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
+        /// <summary>
+        /// Gerar token de autenticação
+        /// </summary>
+        /// <param name="loginInput">usuário e senha</param>
+        /// <returns>token de autenticação</returns>
         [HttpPost]
         public IActionResult Post([FromBody] LoginInput loginInput)
         {
