@@ -25,5 +25,7 @@ jobs:
       run: dotnet restore ./TechChallangeCadastroCotatos/TechChallangeCadastroContatosAPI.csproj
     - name: Build
       run: dotnet build ./TechChallangeCadastroCotatos/TechChallangeCadastroContatosAPI.csproj --no-restore
+    - name: Roda Testes
+      run: dotnet test ./Test
 
     
