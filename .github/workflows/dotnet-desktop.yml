@@ -24,6 +24,6 @@ jobs:
     - name: Install dependencies
       run: dotnet restore ./TechChallangeCadastroCotatos/TechChallangeCadastroContatosAPI.csproj
     - name: Build
-      run: dotnet build .\TechChallangeCadastroCotatos\TechChallangeCadastroContatosAPI.csproj --no-restore
+      run: dotnet build ./TechChallangeCadastroCotatos/TechChallangeCadastroContatosAPI.csproj --no-restore
 
     
