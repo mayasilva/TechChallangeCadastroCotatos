@@ -22,7 +22,7 @@ jobs:
       with:
         dotnet-version: '8.0.x'
     - name: Install dependencies
-      run: dotnet restore .\TechChallangeCadastroCotatos\TechChallangeCadastroContatosAPI.csproj
+      run: dotnet restore ./TechChallangeCadastroCotatos/TechChallangeCadastroContatosAPI.csproj
     - name: Build
       run: dotnet build .\TechChallangeCadastroCotatos\TechChallangeCadastroContatosAPI.csproj --no-restore
 
