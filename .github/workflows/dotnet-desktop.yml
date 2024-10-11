@@ -1,21 +1,29 @@
-name: TechChallange
+#nome do workflow
+name: Workflow TechChallange
 
+#defini quando o workflow será disparado
 on:
   push:
     branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
 jobs:
-
-  build:
-
-    strategy:
-      matrix:
-        configuration: [Debug, Release]
-
-    runs-on: windows-latest  # For a list of available runner types, refer to
-                             # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-o
+   build:
+    name: .Net Build
+    runs-on: ubuntu-latest
     steps:
+    #marketplace - Setup .NET Core SDK
+    - uses: actions/setup-dotnet@v4.0.0
+    
     - uses: actions/checkout@v4
-    - name: Instalar .NET
-      uses: actions/setup-dotnet@v4
+    - name: Setup dotnet
+      uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 8.0.x
+        dotnet-version: '8.0.x'
+    - name: Install dependencies
+      run: dotnet restore **/*.csproj
+    - name: Build
+      run: dotnet build **/*.csproj --no-restore
+
+    
